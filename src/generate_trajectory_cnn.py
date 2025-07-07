@@ -6,9 +6,9 @@ from joblib import load
 
 # --- 1. Carregar Modelo, Normalizador e Dados ---
 print("Carregando modelo CNN, normalizador e dados...")
-model = load_model('cnn_trajectory_model.h5')
-scaler = load('scaler_cnn.gz')
-df_real = pd.read_csv('robot_trajectory.csv')
+model = load_model('data/cnn_trajectory_model.h5')
+scaler = load('data/scaler_cnn.gz')
+df_real = pd.read_csv('data/robot_trajectory.csv')
 real_data = df_real[['position', 'velocity']].values
 
 # Usa o mesmo tamanho de sequência do treinamento
@@ -56,5 +56,5 @@ plt.xlabel('Posição')
 plt.ylabel('Velocidade')
 plt.legend()
 plt.grid(True)
-plt.savefig('cnn_generative_prediction.png')
+plt.savefig('results/cnn_generative_prediction.png')
 plt.show()

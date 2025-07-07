@@ -22,7 +22,6 @@ def create_sequences(data, sequence_length):
 
 
 def build_cnn_model(sequence_length, num_features):
-    # ... (a função build_cnn_model continua a mesma)
     model = Sequential([
         Input(shape=(sequence_length, num_features)),
         Conv1D(filters=32, kernel_size=2, padding='causal',
@@ -43,7 +42,7 @@ def build_cnn_model(sequence_length, num_features):
 
 
 # --- 1. Carregamento e Pré-processamento dos Dados ---
-df = pd.read_csv('robot_trajectory.csv')
+df = pd.read_csv('data/robot_trajectory.csv')
 trajectory_data = df[['position', 'velocity']].values
 scaler = MinMaxScaler(feature_range=(0, 1))
 scaled_data = scaler.fit_transform(trajectory_data)
@@ -65,7 +64,7 @@ history = model.fit(X_train, y_train, epochs=50, batch_size=32,
 
 # --- 4. Salvamento do Modelo e Normalizador ---
 print("\nSalvando o modelo CNN e o normalizador...")
-model.save('cnn_trajectory_model.h5')
-dump(scaler, 'scaler_cnn.gz')
+model.save('data/cnn_trajectory_model.h5')
+dump(scaler, 'data/scaler_cnn.gz')
 print("Modelo CNN salvo como 'cnn_trajectory_model.h5'")
 print("Normalizador salvo como 'scaler_cnn.gz'")

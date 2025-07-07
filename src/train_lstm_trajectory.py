@@ -88,7 +88,7 @@ plt.xlabel('Época')
 plt.ylabel('Erro Quadrático Médio (Loss)')
 plt.legend()
 plt.grid(True)
-plt.savefig('lstm_learning_curve.png')
+plt.savefig('results/lstm_learning_curve.png')
 plt.show()
 
 
@@ -122,7 +122,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.savefig('lstm_prediction_vs_real.png')
+plt.savefig('results/lstm_prediction_vs_real.png')
 plt.show()
 
 # --- 5. Salvamento do Modelo e Normalizador ---
@@ -130,10 +130,10 @@ plt.show()
 print("\nSalvando o modelo e o normalizador...")
 
 # Salva o modelo treinado em um arquivo H5
-model.save('lstm_trajectory_model.h5')
+model.save('data/lstm_trajectory_model.h5')
 
 # Salva o objeto 'scaler' que foi usado para normalizar os dados
-dump(scaler, 'scaler.gz')
+dump(scaler, 'data/scaler.gz')
 
-print("Modelo salvo como 'lstm_trajectory_model.h5'")
+print("Modelo salvo como 'data/lstm_trajectory_model.h5'")
 print("Normalizador salvo como 'scaler.gz'")

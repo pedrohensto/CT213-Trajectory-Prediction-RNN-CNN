@@ -8,11 +8,11 @@ from joblib import load
 
 print("Carregando modelo, normalizador e dados...")
 # Carrega o modelo LSTM pré-treinado
-model = load_model('lstm_trajectory_model.h5')
+model = load_model('data/lstm_trajectory_model.h5')
 # Carrega o normalizador usado no treinamento
-scaler = load('scaler.gz')
+scaler = load('data/scaler.gz')
 # Carrega a trajetória real para usarmos como ponto de partida e para comparação
-df_real = pd.read_csv('robot_trajectory.csv')
+df_real = pd.read_csv('data/robot_trajectory.csv')
 real_data = df_real[['position', 'velocity']].values
 
 # Define o mesmo tamanho de sequência usado no treinamento
@@ -70,5 +70,5 @@ plt.xlabel('Posição')
 plt.ylabel('Velocidade')
 plt.legend()
 plt.grid(True)
-plt.savefig('lstm_generative_prediction.png')
+plt.savefig('results/lstm_generative_prediction.png')
 plt.show()
