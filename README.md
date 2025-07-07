@@ -68,9 +68,9 @@ python src/generate_trajectory_cnn.py
 A principal conclusão do trabalho é a comparação da robustez generativa entre as duas arquiteturas.
 
 **Trajetória Gerada pela LSTM:**
-*(Adicione aqui a imagem `results/lstm_generative_prediction.png`)*
+(results/lstm_generative_prediction.png)
 
 **Trajetória Gerada pela CNN:**
-*(Adicione aqui a imagem `results/cnn_generative_prediction.png`)*
+(results/cnn_generative_prediction.png)
 
 Observa-se que a LSTM foi mais robusta em manter a estabilidade da dinâmica do sistema em previsões de longo prazo.
