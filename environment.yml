@@ -1,0 +1,13 @@
+name: ct213-exame-env
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - gymnasium[classic-control]==0.29.1
+    - tensorflow==2.16.1
+    - tf-keras==2.16.1
+    - matplotlib==3.9.0
+    - pandas
+    - joblib

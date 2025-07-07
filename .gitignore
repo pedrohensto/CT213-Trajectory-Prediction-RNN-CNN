@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de ambiente virtual
+/ct213_lab12/
+.venv/
+venv/
+ENV/
+
+# Arquivos do sistema operacional
+.DS_Store
